@@ -1,0 +1,154 @@
+# app url
+snippet url
+	<?php echo \$app->url('$0'); ?>
+
+# progressive breakpoints
+snippet flow
+	<div class="row killer pad-$1-le">
+		<?php \$numCols=$2; for (\$currentCol=0; \$currentCol<\$numCols; \$currentCol++) { ?>
+		<div class="xl-4 l-5 m-1-third s-10 xs-20 col gut-$1">
+			<?php foreach (\$$3 as \$key=>\$row) { if ((\$key % \$numCols) == \$currentCol) { ?>
+			<div class="pic-box of-hidden">
+				$0$VISUAL
+			</div>
+			<?php }} ?>
+		</div>
+		<?php } ?>
+	</div>
+
+# free flowing ojects in comumns
+snippet free
+	<?php foreach (\$$1 as \$key=>\$row) { if ((\$key % ${2:3}) == 0) { ?>
+	$0$VISUAL
+	<?php }} ?>
+
+# poza
+snippet poza
+	<img class="$1" src="<?php echo \$app->root_images.\$${2:row}->poza($0); ?>" alt="<?php echo \$$2->title; ?>" />
+
+# incl snippet
+snippet incl
+	<?php include 'mvc/theme/'.\$app->appTheme.'/${1:snippets/}$0.php'; ?>
+
+# require snippet
+snippet reqo
+	<?php require_once 'mvc/theme/'.\$app->appTheme.'/$0.php'; ?>
+
+# basic snippet
+snippet snip
+	<?php \$rows = \$app->posts->get(array('status'=>1, 'tip'=>POST_$1, 'id_template'=>$2, 'optiuni'=>$3, 'sort'=>'${4:p|t}.${5:sort_order/data_adaugarii|title} ${6:ASC/DESC}')); ?>
+	<?php foreach (\$rows as \$row) { ?>
+	$0$VISUAL
+	<?php } ?>
+
+# extended snippet
+snippet snippet
+	<?php
+	\$lista = array(); \$s = array();
+	\$rows = \$app->posts->get( array('status'=>1, 'tip'=>POST_$1, 'id_template'=>$2, 'optiuni'=>$3, 'sort'=>'${4:p|t}.${5:sort_order/data_adaugarii|title} ${6:ASC/DESC}'));
+	foreach (\$rows as \$row) { \$key = 'p'.\$row->id;
+		\$lista[\$key] = \$row; \$s[\$key] = \$row->menu_order;
+		\$row->link = \$app->tip2url[\$row->tip];
+		switch (\$row->tip) {
+			case POST_SECTIUNE : \$row->link = \$app->url(\$row->link.\$row->seo_url.'.html'); break;
+			default : \$row->link = \$app->url(\$row->link.( \$row->id_sectiune ? \$app->opsectiuni[\$row->id_sectiune]['seo_url'].'/' : 'main/' ).\$row->seo_url.'.html'); break;
+		}
+	}
+	\$rows = \$app->categorii->get( array() );
+	foreach (\$rows as \$row) { \$key = 'c'.\$row->id;
+		\$lista[\$key] = \$row; \$s[\$key] = \$row->menu_order;
+		\$row->link = \$app->tip2url[\$row->tip];
+		\$row->link = \$app->url(\$app->tip2url[\$row->tip].( \$row->id_sectiune ? \$app->opsectiuni[\$row->id_sectiune]['seo_url'].'/' : 'main/' ).\$row->seo_url);
+	}
+	asort(\$s);
+	?>
+	<?php if (\$s) { ?>
+		<?php foreach (\$s as \$key => \$value) { \$row = \$lista[\$key]; ?>
+		$0$VISUAL
+		<?php } ?>
+	<?php } ?>
+
+# photoswipe
+snippet ps
+	<div class="pic-box of-hidden">
+		<?php \$type = (\$row->doc_id == 1 ? 'youtube' : (\$row->doc_id == 2 ? 'vimeo' : 'picture')); if (\$type=='youtube' || \$type=='vimeo') { ?>
+		<div class="lightbox pointer relativ livepic video-box" data-type="<?php echo \$type; ?>" data-media="<?php echo \$row->description_short ? \$row->description_short : 'none';?>" data-source="<?php echo \$app->root_images.\$row->fisier() ;?>" data-title="<?php echo \$row->title ;?>">
+			<span class="video-icon block border-box fs-14 rounded-full absolut"></span>
+			<img class="full-width" src="<?php echo \$app->root_images.\$row->fisier('${1:edit}') ;?>" alt="<?php echo \$row->title ;?>">
+		</div>
+		<?php } else { ?>
+			<img class="full-width lightbox pointer livepic" data-type="picture" src="<?php echo \$app->root_images.\$row->fisier('$1') ;?>" data-source="<?php echo \$app->root_images.\$row->fisier() ;?>" data-title="<?php echo \$row->title ;?>" alt="<?php echo \$row->title ;?>">
+		<?php } ?>
+	</div>
+
+# text variable
+snippet txt
+	<?php echo \$txt$0; ?>
+# text variable def
+snippet $t
+	\$txt$1 = '$0';
+
+# echo php echo
+snippet pec
+	<?php echo \$$0; ?>
+
+# echo php if
+snippet pif
+	<?php if (\$$1) { ?>
+	$0$VISUAL
+	<?php } ?>
+
+# echo php foreach
+snippet pfe
+	<?php foreach (\$$1 as \$$2) { ?>
+	$0$VISUAL
+	<?php } ?>
+
+# echo php close
+snippet pcl
+	<?php } ?>
+
+# echo php else
+snippet pel
+	<?php } else { ?>
+		$0
+
+# php
+snippet php
+	<?php $0 ?>
+	
+# dt-accordion
+snippet accord
+	<div class="dt-accordion">
+		<div class="trigger">$1</div>
+		<div class="dt-accordion-content">
+			$0
+		</div>
+	</div>
+
+# dt-tabs
+snippet tabs
+	<div class="dt-tabs">
+		<ul class="tabs-header triggers">
+			<li class="tab-trigger">$1</li>
+		</ul>
+		<div class="tab">
+			$0
+		</div>
+	</div>
+	<script>\$dt('.dt-tabs').tabs(0);</script>
+
+# dt-popup
+snippet popup
+	<div class="$1" data-dialog="#$2">$3</div>
+	<div style="display:none">
+		<div id="$2" class="relativ">
+			$0$VISUAL
+			<a class="dialog-close block pad-10px black hover-dark"><span class="ico">&#xf00d;</span></a>
+		</div>
+		<script>\$('.$1').click( function(){ \$dt.dialog({ source: this.getAttribute('data-dialog'), position:'center center', overlayColor:'#ffffff' }); } );</script>
+	</div>
+
+# print_r die
+snippet debug
+	echo '<pre>'; print_r($0); die();
