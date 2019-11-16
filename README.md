@@ -4,7 +4,7 @@ This is my vim configuration on **Windows**
 
 <br/>
 
-<<<<<<< HEAD
+<<<<<<< ours
 ## Step 1 - Prequisites
 
 Download and install:
@@ -12,13 +12,13 @@ Download and install:
 ## Step 1
 
 Install:
->>>>>>> 9c2f034591a5b871916e75d5d3f524d7dcb09850
+>>>>>>> theirs
 * [gVim](https://github.com/vim/vim-win32-installer/releases)
 * [chocolatey](https://chocolatey.org/install)
 * [nodejs](https://nodejs.org/en/)
 * [ctags](https://github.com/universal-ctags/ctags-win32/releases)
 * [autohotkey](https://www.autohotkey.com/)
-<<<<<<< HEAD
+<<<<<<< ours
 Run `choco install -y ripgrep make`\
 Add *C:\Users\%username%\ctags* to PATH\
 
@@ -74,7 +74,7 @@ Run:
 * *$HOME\vimfiles\pack\minpac\start\vim-renamer\doc\AddVimRenamerToContextMenu.bat*
 * *$HOME\SetVimIcon.bat* as administrator
 * `:call minpac#update()` and restart gVim
->>>>>>> 9c2f034591a5b871916e75d5d3f524d7dcb09850
+>>>>>>> theirs
 * `:call coc#util#install()`
 
 <br/>
