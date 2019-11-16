@@ -12,6 +12,7 @@ Download and install:
 * [nodejs](https://nodejs.org/en/)
 * [ctags](https://github.com/universal-ctags/ctags-win32/releases)
 * [autohotkey](https://www.autohotkey.com/)
+\
 Run `choco install -y ripgrep make`\
 Add *C:\Users\%username%\ctags* to PATH\
 
@@ -29,7 +30,7 @@ echo "runtime gvimrc" > _gvimrc
 * Run *$HOME\vimfiles\antaed\SetVimIcon.bat* as administrator
 * Copy contents of ctags download to \ctags
 * Create shortcut of *$HOME\vimfiles\antaed\CapsLockCtrlEscape.ahk* and move it to *C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup*
-* Install one of the font variants from *$HOME\vimfiles\antaed\*
+* Install one of the font variants from *$HOME\vimfiles\antaed*
 
 <br/>
 
