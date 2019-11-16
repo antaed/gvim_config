@@ -12,7 +12,7 @@ Download and install:
 * [nodejs](https://nodejs.org/en/)
 * [ctags](https://github.com/universal-ctags/ctags-win32/releases)
 * [autohotkey](https://www.autohotkey.com/)
-\
+
 Run `choco install -y ripgrep make`\
 Add *C:\Users\\%username%\ctags* to PATH
 
@@ -34,7 +34,7 @@ $ echo "runtime gvimrc" > _gvimrc
 
 <br/>
 
-## Step 4 - Inside gVim
+## Step 3 - Inside gVim
 
 * `:call minpac#update()` 
 * `:call coc#util#install()`
