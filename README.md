@@ -14,7 +14,7 @@ Download and install:
 * [autohotkey](https://www.autohotkey.com/)
 \
 Run `choco install -y ripgrep make`\
-Add *C:\Users\\%username%\ctags* to PATH\
+Add *C:\Users\\%username%\ctags* to PATH
 
 <br/>
 
