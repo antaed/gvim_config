@@ -2,6 +2,19 @@
 
 ![screenshot](https://repository-images.githubusercontent.com/221772262/3b133600-08e1-11ea-9918-69150027f6ef)
 
+This repository contains my gVim config for a new computer and it is based on my own work flow as a web developer (in PHP, JavaScript, HTML, CSS).\
+The repo includes:
+
+* my **gvimrc**
+* my **vimfiles** directory (including plugins, my theme, my snippets, my syntax files, etc.)
+* my font of choice
+* script to remap CapsLock to Ctrl/Esc
+* script to add [Vim Renamer](https://github.com/qpkorr/vim-renamer) to Windows Explorer context menu
+* script to replace the Vim icon
+
+**Disclaimer**\
+*I created this repository for my own needs and I highly recommend that you check it thoroughly before installing it on your system. I am not responsible if something goes wrong, so use at your own risk.*
+
 <br/>
 
 ## Step 1 - Prequisites
