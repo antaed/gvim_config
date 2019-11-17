@@ -1,10 +1,10 @@
 *
+!/after
 !/antaed
 !/bitmaps
 !/colors
 !/plugin
 !/snippets
-!/syntax
 !.gitignore
 !README.md
 !coc-settings.json
