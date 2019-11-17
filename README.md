@@ -21,7 +21,6 @@ This repository contains my gVim configuration process for a new Windows compute
 
 ### Step 1 - Install prequisites
 
-Download and install:
 * [gVim](https://github.com/vim/vim-win32-installer/releases)
 * [Chocolatey](https://chocolatey.org/install)
 * [Node.js](https://nodejs.org/en/)
