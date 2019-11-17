@@ -437,10 +437,10 @@ endfunction
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Hexokinase
-let g:Hexokinase_v2 = 0
-let g:Hexokinase_signIcon = '■'
-autocmd FileType css silent! HexokinaseToggle
-autocmd FileType vim silent! HexokinaseToggle
+" let g:Hexokinase_v2 = 0
+" let g:Hexokinase_signIcon = '■'
+" autocmd FileType css silent! HexokinaseToggle
+" autocmd FileType vim silent! HexokinaseToggle
 
 " Vim-Sandwich - enable vim-surround mappings
 runtime macros/sandwich/keymap/surround.vim
