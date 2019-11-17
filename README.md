@@ -2,10 +2,10 @@
 
 ![screenshot](https://repository-images.githubusercontent.com/221772262/3b133600-08e1-11ea-9918-69150027f6ef)
 
-This repository contains my gVim configuration for a new Windows computer, it is based on my own work flow as a web developer (in PHP, JavaScript, HTML, CSS) and it includes:
+This repository contains my gVim configuration process for a new Windows computer, it is based on my own work flow as a web developer (in PHP, JavaScript, HTML, CSS) and it includes:
 
 * my **gvimrc**
-* my **vimfiles** directory (which also includes my custom theme, my snippets and my syntax files)
+* **vimfiles** directory containing the files to load my custom theme, snippets and syntax rules
 * script to add [Vim Renamer](https://github.com/qpkorr/vim-renamer) to Windows Explorer context menu
 * script to remap CapsLock to Ctrl/Esc
 * script to replace the Vim icon
@@ -19,7 +19,7 @@ This repository contains my gVim configuration for a new Windows computer, it is
 ## INSTALLATION
 <br/>
 
-### Step 1 - Prequisites
+### Step 1 - Install prequisites
 
 Download and install:
 * [gVim](https://github.com/vim/vim-win32-installer/releases)
@@ -34,12 +34,13 @@ Add *C:\Program Files (x86)\Vim\vim81* to PATH
 
 <br/>
 
-### Step 2 - Inside $HOME directory
+### Step 2 - Prepare $HOME directory
 
 ```
 $ cd %USERPROFILE%  
 $ mkdir .backups\.backup .backups\.swp .backups\.undo ctags gutentags
 $ git clone git@github.com:antaed/gvim_config.git vimfiles
+$ git clone https://github.com/k-takata/minpac.git ^ vimfiles\pack\minpac\opt\minpac
 $ echo "runtime gvimrc" > _gvimrc
 ```
 * Copy contents of ctags download to \ctags
@@ -50,14 +51,14 @@ $ echo "runtime gvimrc" > _gvimrc
 
 <br/>
 
-### Step 3 - Inside gVim
+### Step 3 - Install plugins
 
 * `:call minpac#update()` 
 * `:call coc#util#install()`
 
 <br/>
 
-### Set gVim as git mergetool
+### Step 4 - Set gVim as git mergetool
 
 ```
 $ C:\Program Files (x86)\Vim\vim81\install.exe: n, d
