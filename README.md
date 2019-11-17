@@ -17,7 +17,6 @@ This repository contains my gVim configuration process for a new Windows compute
 <br/>
 
 ## INSTALLATION
-<br/>
 
 ### Step 1 - Install prequisites
 
