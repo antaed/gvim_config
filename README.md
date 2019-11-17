@@ -64,5 +64,5 @@ $ git config --global mergetool.keepBackup false
 
 <br/>
 
-## [Go to MacVim version](https://github.com/antaed/macvim_config)
+### [Go to MacVim version](https://github.com/antaed/macvim_config)
 
