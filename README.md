@@ -14,7 +14,6 @@ This repository contains my gVim configuration process for a new Windows compute
 **Disclaimer**\
 *I created this repository for my own needs and I highly recommend that you check it thoroughly before installing it on your system. I am not responsible if something goes wrong, so use at your own risk.*
 
-<br/>
 
 ## INSTALLATION
 
@@ -30,7 +29,6 @@ Run `choco install -y ripgrep make`\
 Add *C:\Users\\%username%\ctags* to PATH\
 Add *C:\Program Files (x86)\Vim\vim81* to PATH
 
-<br/>
 
 ### Step 2 - Prepare $HOME directory
 
@@ -47,14 +45,12 @@ $ echo "runtime gvimrc" > _gvimrc
 * Run *$HOME\vimfiles\pack\minpac\start\vim-renamer\doc\AddVimRenamerToContextMenu.bat*
 * Run *$HOME\vimfiles\antaed\SetVimIcon.bat* as administrator
 
-<br/>
 
 ### Step 3 - Install plugins
 
 * `:call minpac#update()` 
 * `:call coc#util#install()`
 
-<br/>
 
 ### Step 4 - Set gVim as git mergetool
 
@@ -65,6 +61,4 @@ $ git config --global mergetool.diffconflicts.cmd "gvim -c DiffConflicts \"$MERG
 $ git config --global mergetool.diffconflicts.trustExitCode true
 $ git config --global mergetool.keepBackup false
 ```
-
-<br/>
 
