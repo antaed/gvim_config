@@ -16,8 +16,7 @@ This repository contains my gVim configuration for a new Windows computer, it is
 
 <br/>
 
-## Installation
-
+## INSTALLATION
 <br/>
 
 ### Step 1 - Prequisites
@@ -58,7 +57,7 @@ $ echo "runtime gvimrc" > _gvimrc
 
 <br/>
 
-## Set gVim as git mergetool
+### Set gVim as git mergetool
 
 ```
 $ C:\Program Files (x86)\Vim\vim81\install.exe: n, d
