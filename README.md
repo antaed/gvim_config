@@ -1,6 +1,6 @@
-# gVim Config
+# gVim Config on Windows
 
-This is my vim configuration on **Windows**
+![screenshot](https://repository-images.githubusercontent.com/221772262/3b133600-08e1-11ea-9918-69150027f6ef)
 
 <br/>
 
@@ -8,13 +8,14 @@ This is my vim configuration on **Windows**
 
 Download and install:
 * [gVim](https://github.com/vim/vim-win32-installer/releases)
-* [chocolatey](https://chocolatey.org/install)
-* [nodejs](https://nodejs.org/en/)
+* [Chocolatey](https://chocolatey.org/install)
+* [Node.js](https://nodejs.org/en/)
 * [ctags](https://github.com/universal-ctags/ctags-win32/releases)
-* [autohotkey](https://www.autohotkey.com/)
+* [AutoHotKey](https://www.autohotkey.com/)
 
 Run `choco install -y ripgrep make`\
-Add *C:\Users\\%username%\ctags* to PATH
+Add *C:\Users\\%username%\ctags* to PATH\
+Add *C:\Program Files (x86)\Vim\vim81* to PATH
 
 <br/>
 
@@ -26,11 +27,11 @@ $ mkdir .backups\.backup .backups\.swp .backups\.undo ctags gutentags
 $ git clone git@github.com:antaed/gvim_config.git vimfiles
 $ echo "runtime gvimrc" > _gvimrc
 ```
+* Copy contents of ctags download to \ctags
+* Install one of the font variants from *$HOME\vimfiles\antaed*
+* Create shortcut of *$HOME\vimfiles\antaed\CapsLockCtrlEscape.ahk* and move it to *C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup*
 * Run *$HOME\vimfiles\pack\minpac\start\vim-renamer\doc\AddVimRenamerToContextMenu.bat*
 * Run *$HOME\vimfiles\antaed\SetVimIcon.bat* as administrator
-* Copy contents of ctags download to \ctags
-* Create shortcut of *$HOME\vimfiles\antaed\CapsLockCtrlEscape.ahk* and move it to *C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup*
-* Install one of the font variants from *$HOME\vimfiles\antaed*
 
 <br/>
 
@@ -41,9 +42,8 @@ $ echo "runtime gvimrc" > _gvimrc
 
 <br/>
 
-## Optional - set gVim as git mergetool
+### Set gVim as git mergetool
 
-Add gVim to PATH, then run:
 ```
 $ C:\Program Files (x86)\Vim\vim81\install.exe: n, d
 $ git config --global merge.tool diffconflicts
