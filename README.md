@@ -1,23 +1,24 @@
-# gVim Config on Windows
+# My gVim for Windows config
 
 ![screenshot](https://repository-images.githubusercontent.com/221772262/3b133600-08e1-11ea-9918-69150027f6ef)
 
-This repository contains my gVim config for a new computer and it is based on my own work flow as a web developer (in PHP, JavaScript, HTML, CSS).\
-The repo includes:
+This repository contains my gVim configuration for a new Windows computer, it is based on my own work flow as a web developer (in PHP, JavaScript, HTML, CSS) and it includes:
 
 * my **gvimrc**
-* my **vimfiles** directory (including plugins, my theme, my snippets, my syntax files, etc.)
-* my font of choice
-* script to remap CapsLock to Ctrl/Esc
+* my **vimfiles** directory (which also includes my custom theme, my snippets and my syntax files)
 * script to add [Vim Renamer](https://github.com/qpkorr/vim-renamer) to Windows Explorer context menu
+* script to remap CapsLock to Ctrl/Esc
 * script to replace the Vim icon
+* the font of my choice
 
 **Disclaimer**\
 *I created this repository for my own needs and I highly recommend that you check it thoroughly before installing it on your system. I am not responsible if something goes wrong, so use at your own risk.*
 
 <br/>
 
-## Step 1 - Prequisites
+## Installation
+
+### Step 1 - Prequisites
 
 Download and install:
 * [gVim](https://github.com/vim/vim-win32-installer/releases)
@@ -32,7 +33,7 @@ Add *C:\Program Files (x86)\Vim\vim81* to PATH
 
 <br/>
 
-## Step 2 - Inside $HOME directory
+### Step 2 - Inside $HOME directory
 
 ```
 $ cd %USERPROFILE%  
@@ -48,14 +49,14 @@ $ echo "runtime gvimrc" > _gvimrc
 
 <br/>
 
-## Step 3 - Inside gVim
+### Step 3 - Inside gVim
 
 * `:call minpac#update()` 
 * `:call coc#util#install()`
 
 <br/>
 
-### Set gVim as git mergetool
+#### Set gVim as git mergetool
 
 ```
 $ C:\Program Files (x86)\Vim\vim81\install.exe: n, d
