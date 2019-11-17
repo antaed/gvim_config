@@ -4,7 +4,7 @@
 
 This repository contains my gVim configuration process for a new Windows computer, it is based on my own work flow as a web developer (in PHP, JavaScript, HTML, CSS) and it includes:
 
-* my **gvimrc**
+* my **gvimrc** file
 * **vimfiles** directory containing various customization files including my own theme, snippets, syntax highlighting, etc.
 * script to add [Vim Renamer](https://github.com/qpkorr/vim-renamer) to Windows Explorer context menu
 * script to remap CapsLock to Ctrl/Esc
