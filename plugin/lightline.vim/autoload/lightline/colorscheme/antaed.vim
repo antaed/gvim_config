@@ -1,0 +1,41 @@
+let s:p = { 'normal': {}, 'command': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {} }
+
+let s:black = [ '#000000', '0'   ] " #000000
+let s:dark1 = [ '#101317', '232' ] " #101317
+let s:dark2 = [ '#191E24', '235' ] " #191E24
+let s:dark3 = [ '#34404D', '237' ] " #34404D
+let s:neutr = [ '#51657B', '241' ] " #51657B
+let s:lite3 = [ '#6E88A2', '244' ] " #6E88A2
+let s:lite2 = [ '#98ACBF', '248' ] " #98ACBF
+let s:lite1 = [ '#C0CDD8', '252' ] " #C0CDD8
+let s:white = [ '#FFFFFF', '15'  ] " #FFFFFF
+let s:fluor = [ '#A3C924', '148' ] " #A3C924
+let s:turqo = [ '#00BAC7', '44'  ] " #00BAC7
+let s:purpl = [ '#9E6CEA', '98'  ] " #9E6CEA
+let s:magen = [ '#DC184D', '197' ] " #DC184D
+
+let s:p.normal.left     = [ [ s:black , s:fluor ] , [ s:fluor , s:black ] , [ s:neutr , s:black ] , [ s:neutr , s:black ] ]
+let s:p.command.left    = [ [ s:black , s:turqo ] , [ s:turqo , s:black ] , [ s:neutr , s:black ] , [ s:neutr , s:black ] ]
+let s:p.insert.left     = [ [ s:white , s:magen ] , [ s:magen , s:black ] , [ s:neutr , s:black ] , [ s:neutr , s:black ] ]
+let s:p.visual.left     = [ [ s:black , s:purpl ] , [ s:purpl , s:black ] , [ s:neutr , s:black ] , [ s:neutr , s:black ] ]
+let s:p.replace.left    = [ [ s:black , s:turqo ] , [ s:turqo , s:black ] , [ s:neutr , s:black ] , [ s:neutr , s:black ] ]
+let s:p.inactive.left   = [ [ s:neutr , s:dark2 ] , [ s:lite3 , s:black ] , [ s:neutr , s:black ] ]
+let s:p.normal.right    = [ [ s:fluor , s:black ] , [ s:fluor , s:black ] ]
+let s:p.command.right   = [ [ s:turqo , s:black ] , [ s:turqo , s:black ] ]
+let s:p.insert.right    = [ [ s:magen , s:black ] , [ s:magen , s:black ] ]
+let s:p.visual.right    = [ [ s:purpl , s:black ] , [ s:purpl , s:black ] ]
+let s:p.replace.right   = [ [ s:turqo , s:black ] , [ s:turqo , s:black ] ]
+let s:p.inactive.right  = [ [ s:lite3 , s:black ] , [ s:lite3 , s:black ] ]
+let s:p.normal.middle   = [ [ s:neutr , s:black ] ]
+let s:p.command.middle  = [ [ s:neutr , s:black ] ]
+let s:p.inactive.middle = [ [ s:neutr , s:black ] ]
+let s:p.tabline.left    = [ [ s:neutr , s:black ] , [ s:neutr , s:black ] , [ s:neutr , s:black ] ]
+let s:p.tabline.tabsel  = [ [ s:lite1 , s:dark3 ] ]
+let s:p.tabline.middle  = [ [ s:neutr , s:black ] ]
+let s:p.tabline.right   = [ [ s:black , s:black ] ]
+let s:p.normal.error    = [ [ s:black , s:magen ] ]
+let s:p.normal.warning  = [ [ s:black , s:magen ] ]
+let s:p.command.error   = [ [ s:black , s:magen ] ]
+let s:p.command.warning = [ [ s:black , s:magen ] ]
+
+let g:lightline#colorscheme#antaed#palette = lightline#colorscheme#flatten(s:p)
