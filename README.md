@@ -62,5 +62,7 @@ $ git config --global mergetool.diffconflicts.trustExitCode true
 $ git config --global mergetool.keepBackup false
 ```
 
-#### [Go to MacVim version](https://github.com/antaed/macvim_config)
+<br/>
+
+## [Go to MacVim version](https://github.com/antaed/macvim_config)
 
