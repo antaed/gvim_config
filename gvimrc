@@ -77,14 +77,17 @@ nmap <leader>g :tabedit $HOME/vimfiles/gvimrc<CR>
 " Source gvimrc
 nmap <leader>sg :source $MYGVIMRC<CR>
 
-" Open snippets in new tab
-nmap <leader>snip :tabedit $HOME/vimfiles/pack/minpac/start/vim-snippets/snippets/php_antaed.snippets<CR>
-
 " Correct pasting
 nnoremap <leader>p p`[v`]=
 
+" Copy and paste highlighted word
+if (&hls && v:hlsearch)
+    nnoremap <C-c> "+yiw
+    nnoremap <C-v> ciw<C-r><C-o>+<esc>
+endif
+
 " Search highlights off
-nnoremap <silent> <leader><space> :call popup_clear() <bar> :noh<cr>
+nnoremap <silent> <leader><space> :call popup_clear() <bar> :let @/ = expand("<cword>") <bar> :set invhlsearch<cr>
 
 " Remap buffer motion
 nnoremap <C-Down> :bnext<CR>
@@ -286,7 +289,7 @@ nnoremap <F5> :DiffSaved<CR>
 nnoremap <silent> <expr> <F6> &diff ? ':windo diffoff:bd' : ''
 
 " HL on double click
-nnoremap <silent> <2-LeftMouse> :let @/='\V\<'.escape(expand('<cword>'), '\').'\>'<cr>:set hls<cr>viw
+nnoremap <silent> <2-LeftMouse> :let @/='\V\<'.escape(expand('<cword>'), '\').'\>' <bar> :set hls<cr>
 
 " CtrlP word under cursor
 nmap <F7> :CtrlP<CR><C-\>w
