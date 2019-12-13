@@ -12,6 +12,7 @@ syn match phpFunc "\h\w*\ze(" contained containedin=phpRegion
 syn match phpDef "\h\u*_*\u\+" contained containedin=phpRegion
 syn match phpCap "\u\w\+" contained containedin=phpRegion
 syn keyword phpGlobals $GLOBALS $_SERVER $_REQUEST $_POST $_GET $_FILES $_ENV $_COOKIE $_SESSION contained containedin=phpRegion
+syn keyword phpFunctions unixtojd timestampFromString contained
 syn region jsphp start=+<?php+ end=+?>+ keepend contained contains=@htmlPreproc
 syn cluster htmlJavaScript add=jsprop,jsword,jspct,jsop,jsphp,jsjq,jsdt
 syn region javaScript start=+<script\_[^>]*>+ keepend end=+</script\_[^>]*>+me=s-1 contains=@htmlJavaScript,htmlCssStyleComment,htmlScriptTag,@htmlPreproc,jsphp
