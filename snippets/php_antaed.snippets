@@ -152,3 +152,8 @@ snippet popup
 # print_r die
 snippet debug
 	echo '<pre>'; print_r($0); die();
+# if is me
+snippet ifme
+	if ((!in_array(HOST_NAME, array('localhost', 'dev.erp2.ro')) || !\$this->registry->authUser) || \$this->registry->authUser->username=='andrei.orias' || (\$this->registry->authUser->username=='danitoader80' && \$_SERVER['REMOTE_ADDR']=='192.168.1.108')) { 
+	    $0
+	}
