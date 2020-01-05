@@ -1,6 +1,6 @@
 # My gVim for Windows config
 
-![screenshot](https://repository-images.githubusercontent.com/221772262/3b133600-08e1-11ea-9918-69150027f6ef)
+![screenshot](https://repository-images.githubusercontent.com/221772262/1c244c80-2fd2-11ea-9ffa-e2b453afa3af)
 
 This repository contains my gVim configuration process for a new Windows computer, it is based on my own work flow as a web developer (in PHP, JavaScript, HTML, CSS) and it includes:
 
