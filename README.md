@@ -27,7 +27,7 @@ This repository contains my gVim configuration process for a new Windows compute
 
 Run `choco install -y ripgrep make`\
 Add *C:\Users\\%username%\ctags* to PATH\
-Add *C:\Program Files (x86)\Vim\vim81* to PATH
+Add *C:\Program Files (x86)\Vim\vim82* to PATH
 
 
 ### Step 2 - Prepare $HOME directory
@@ -43,6 +43,7 @@ $ echo "runtime gvimrc" > _gvimrc
 * Install one of the font variants from *$HOME\vimfiles\antaed*
 * Create shortcut of *$HOME\vimfiles\antaed\CapsLockCtrlEscape.ahk* and move it to *C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup*
 * Run *$HOME\vimfiles\pack\minpac\start\vim-renamer\doc\AddVimRenamerToContextMenu.bat*
+* Set shortcut icon to *$HOME\vimfiles\bitmaps\vim.ico*
 * Run *$HOME\vimfiles\antaed\SetVimIcon.bat* as administrator
 
 
@@ -54,8 +55,8 @@ $ echo "runtime gvimrc" > _gvimrc
 
 ### Step 4 - Set gVim as git mergetool
 
+* Run *C:\Program Files (x86)\Vim\vim82\install.exe* and select n, d
 ```
-$ C:\Program Files (x86)\Vim\vim81\install.exe: n, d
 $ git config --global merge.tool diffconflicts
 $ git config --global mergetool.diffconflicts.cmd "gvim -c DiffConflicts \"$MERGED\" \"$BASE\" \"$LOCAL\" \"$REMOTE\""
 $ git config --global mergetool.diffconflicts.trustExitCode true
