@@ -303,7 +303,7 @@ nnoremap <leader>pv /\$\w\+<CR>:CopyMatches<CR>:vnew<CR>:vertical resize 80<CR>"
 vnoremap <leader>pv <esc>/\%V\$\w\+<CR>:CopyMatches<CR>:vnew<CR>:vertical resize 80<CR>"+p:sort u<CR>:nohl<CR>dd
 
 " Activate Goyo
-nnoremap <silent> <F10> :packadd goyo.vim <bar> :Goyo<cr>
+nnoremap <silent> <expr> <F10> exists('#goyo') ? ":Goyo!\<cr>" : ":packadd goyo.vim \<bar> :Goyo\<cr>"
 
 
 
