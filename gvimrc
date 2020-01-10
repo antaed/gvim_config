@@ -8,6 +8,41 @@ function! CustomModified()
     return &modified ? '+' : ''
 endfunction
 
+" sync colorscheme
+augroup lightline-events
+    autocmd!
+    autocmd ColorScheme * call s:onColorSchemeChange(expand("<amatch>"))
+augroup END
+let s:colour_scheme_map = {'antaed': 'antaed_light'}
+function! s:onColorSchemeChange(scheme)
+    " Try a scheme provided already
+    execute 'runtime autoload/lightline/colorscheme/'.a:scheme.'.vim'
+    if exists('g:lightline#colorscheme#{a:scheme}#palette')
+        let g:lightline.colorscheme = a:scheme
+    else  " Try falling back to a known colour scheme
+        let l:colors_name = get(s:colour_scheme_map, a:scheme, '')
+        if empty(l:colors_name)
+            return
+        else
+            let g:lightline.colorscheme = l:colors_name
+        endif
+    endif
+    call lightline#init()
+    call lightline#colorscheme()
+    call lightline#update()
+endfunction
+
+" toggle colorscheme with goyo
+function! s:goyo_enter()
+    colorscheme antaed_light
+    silent! call lightline#disable()
+endfunction
+function! s:goyo_leave()
+    colorscheme antaed
+endfunction
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
 colorscheme antaed
 if !exists("g:syntax_on")
     syntax enable
@@ -303,7 +338,7 @@ nnoremap <leader>pv /\$\w\+<CR>:CopyMatches<CR>:vnew<CR>:vertical resize 80<CR>"
 vnoremap <leader>pv <esc>/\%V\$\w\+<CR>:CopyMatches<CR>:vnew<CR>:vertical resize 80<CR>"+p:sort u<CR>:nohl<CR>dd
 
 " Activate Goyo
-nnoremap <silent> <expr> <F10> exists('#goyo') ? ":Goyo!\<cr>" : ":packadd goyo.vim \<bar> :Goyo\<cr>"
+nnoremap <silent> <expr> <F10> exists('#goyo') ? ":Goyo!<cr>" : ":packadd goyo.vim \<bar> :Goyo\<cr>"
 
 
 
