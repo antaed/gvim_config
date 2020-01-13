@@ -7,20 +7,20 @@ let s:dark2 = "43556B" " #43556B
 let s:dark3 = "5D7792" " #5D7792
 let s:neutr = "859AB0" " #859AB0
 let s:lite3 = "B3BFCB" " #B3BFCB
-let s:lite2 = "DBE1E6" " #DBE1E6
+let s:lite2 = "DBE0E6" " #DBE1E6
 let s:lite1 = "EAEDF0" " #EAEDF0
 let s:white = "FFFFFF" " #FFFFFF
-let s:fluor = "82A11C" " #82A11C
-let s:lime0 = "3CAF3A" " #3CAF3A
-let s:mint0 = "1AB68C" " #1AB68C
-let s:turqo = "00949F" " #00949F
-let s:blue0 = "0080D5" " #0080D5
-let s:blue1 = "A3CBEF" " #A3CBEF
-let s:blue2 = "D1E0EF" " #D1E0EF
-let s:indig = "4250CA" " #4250CA
-let s:purpl = "762EE1" " #762EE1
-let s:magen = "DC184D" " #DC184D
-let s:pink0 = "FF3369" " #FF3369
+let s:fluor = "CCB400" " #CCB400
+let s:lime0 = "77B800" " #77B800
+let s:mint0 = "00CC96" " #00CC96
+let s:turqo = "00B2BF" " #00B2BF
+let s:blue0 = "1DA5FF" " #1DA5FF
+let s:indig = "7381FF" " #7381FF
+let s:purpl = "AB73FF" " #AB73FF
+let s:magen = "FF4073" " #FF4073
+let s:pink0 = "FF618B" " #FF618B
+let s:pink1 = "F3DBE1" " #F3DBE1
+let s:pink2 = "F3E7EA" " #F3E7EA
 
 " Theme setup
 hi clear
@@ -302,10 +302,10 @@ call <sid>hi("vimNotation"  , s:dark2 , "" , "NONE")
 call <sid>hi("vimMapModKey" , s:dark2 , "" , "NONE")
 
 " Diff highlighting
-call <sid>hi("DiffAdd"     , s:black , s:blue1 , "NONE")
-call <sid>hi("DiffChange"  , ""      , s:blue2 , "NONE")
+call <sid>hi("DiffAdd"     , s:black , s:pink1 , "NONE")
+call <sid>hi("DiffChange"  , ""      , s:pink2 , "NONE")
 call <sid>hi("DiffDelete"  , s:white , s:white , "NONE")
-call <sid>hi("DiffText"    , s:black , s:blue1 , "NONE")
+call <sid>hi("DiffText"    , s:black , s:pink1 , "NONE")
 
 " Git highlighting
 call <sid>hi("gitCommitOverflow" , s:pink0 , "" , "NONE")
@@ -357,4 +357,4 @@ delf <sid>hi
 delf <sid>gui
 
 " Remove color variables
-unlet s:black s:dark1 s:dark2 s:dark3 s:neutr s:lite3 s:lite2 s:lite1 s:white s:fluor s:lime0 s:mint0 s:turqo s:blue0 s:blue1 s:blue2 s:indig s:purpl s:magen s:pink0
+unlet s:black s:dark1 s:dark2 s:dark3 s:neutr s:lite3 s:lite2 s:lite1 s:white s:fluor s:lime0 s:mint0 s:turqo s:blue0 s:indig s:purpl s:magen s:pink0 s:pink1 s:pink2

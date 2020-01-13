@@ -33,15 +33,15 @@ function! s:onColorSchemeChange(scheme)
 endfunction
 
 " toggle colorscheme with goyo
-function! s:goyo_enter()
-    colorscheme antaed_light
-    silent! call lightline#disable()
-endfunction
-function! s:goyo_leave()
-    colorscheme antaed
-endfunction
-autocmd! User GoyoEnter nested call <SID>goyo_enter()
-autocmd! User GoyoLeave nested call <SID>goyo_leave()
+" function! s:goyo_enter()
+"     colorscheme antaed_light
+"     silent! call lightline#disable()
+" endfunction
+" function! s:goyo_leave()
+"     colorscheme antaed
+" endfunction
+" autocmd! User GoyoEnter nested call <SID>goyo_enter()
+" autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 colorscheme antaed
 if !exists("g:syntax_on")
@@ -320,8 +320,7 @@ nnoremap <F3> i<C-w><C-c>
 nmap <silent> <F4> <Plug>(coc-diagnostic-next-error)
 
 " Compare current buffer against the file
-nnoremap <F5> :DiffSaved<CR>
-nnoremap <silent> <expr> <F6> &diff ? ':windo diffoff:bd' : ''
+nnoremap <silent> <expr> <F5> &diff ? ':windo diffoff:bd' : ":DiffSaved\<CR>"
 
 " HL on double click
 nnoremap <silent> <2-LeftMouse> :let @/='\V\<'.escape(expand('<cword>'), '\').'\>' <bar> :set hls<cr>
@@ -338,7 +337,11 @@ nnoremap <leader>pv /\$\w\+<CR>:CopyMatches<CR>:vnew<CR>:vertical resize 80<CR>"
 vnoremap <leader>pv <esc>/\%V\$\w\+<CR>:CopyMatches<CR>:vnew<CR>:vertical resize 80<CR>"+p:sort u<CR>:nohl<CR>dd
 
 " Activate Goyo
-nnoremap <silent> <expr> <F10> exists('#goyo') ? ":Goyo!<cr>" : ":packadd goyo.vim \<bar> :Goyo\<cr>"
+nnoremap <silent> <expr> <F6> exists('#goyo') ? ":Goyo!\<cr>" : ":packadd goyo.vim \<bar> :Goyo\<cr>"
+
+" Toggle colorscheme
+nnoremap <silent> <expr> <F10> g:colors_name=='antaed' ? ":colorscheme antaed_light".( exists('#goyo') ? "\<bar> :silent! call lightline#disable()" : "" )."\<cr>" : ":colorscheme antaed".( exists('#goyo') ? "\<bar> :silent! call lightline#disable()" : "" )."\<cr>"
+
 
 
 
