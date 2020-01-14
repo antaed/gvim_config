@@ -87,7 +87,7 @@ call <sid>hi("WildMenu"     , s:black , s:white , "NONE")
 call <sid>hi("PMenu"        , s:dark2 , s:lite2 , "NONE")
 call <sid>hi("PMenuSbar"    , ""      , s:lite2 , "NONE")
 call <sid>hi("PMenuThumb"   , ""      , s:lite3 , "NONE")
-call <sid>hi("PMenuSel"     , s:black , s:lite2 , "NONE")
+call <sid>hi("PMenuSel"     , s:white , s:lite3 , "NONE")
 call <sid>hi("EndOfBuffer"  , s:lite1 , ""      , "NONE")
 
 " Standard syntax highlighting
