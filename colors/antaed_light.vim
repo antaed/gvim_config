@@ -10,16 +10,18 @@ let s:lite3 = "B3BFCB" " #B3BFCB
 let s:lite2 = "DBE0E6" " #DBE1E6
 let s:lite1 = "EAEDF0" " #EAEDF0
 let s:white = "FFFFFF" " #FFFFFF
-let s:mint0 = "00C871" " #00C871
+let s:mint0 = "00C46F" " #00C46F
 let s:turqo = "00ABB8" " #00ABB8
 let s:blue0 = "4B99FF" " #4B99FF
 let s:indig = "7381FF" " #7381FF
 let s:purpl = "9879FF" " #9879FF
-let s:magen = "D688D7" " #D688D7
+let s:magen = "CB7ECC" " #CB7ECC
 let s:coral = "F288A4" " #F288A4
 let s:fluor = "DAFF61" " #DAFF61
-let s:pink1 = "F3DBE1" " #F3DBE1
-let s:pink2 = "F3E7EA" " #F3E7EA
+let s:diffa = "D1F0E7" " #D1F0E7
+let s:difft = "CFD3FF" " #CFD3FF
+let s:diffc = "E1E3F5" " #E1E3F5
+let s:diffd = "F0E4E7" " #F0E4E7
 
 " Theme setup
 hi clear
@@ -193,6 +195,7 @@ call <sid>hi("phpIntVar"          , s:magen , "" , "NONE")
 call <sid>hi("phpMethods"         , s:magen , "" , "NONE")
 call <sid>hi("phpMethodsVar"      , s:magen , "" , "NONE")
 call <sid>hi("phpDef"             , s:magen , "" , "NONE")
+call <sid>hi("phpCap"             , s:coral , "" , "NONE")
 call <sid>hi("phpMethod"          , s:coral , "" , "NONE")
 call <sid>hi("phpFunc"            , s:coral , "" , "NONE")
 call <sid>hi("phpClass"           , s:coral , "" , "NONE")
@@ -301,35 +304,35 @@ call <sid>hi("vimNotation"  , s:dark2 , "" , "NONE")
 call <sid>hi("vimMapModKey" , s:dark2 , "" , "NONE")
 
 " Diff highlighting
-call <sid>hi("DiffAdd"     , s:black , s:pink1 , "NONE")
-call <sid>hi("DiffChange"  , ""      , s:pink2 , "NONE")
-call <sid>hi("DiffDelete"  , s:white , s:white , "NONE")
-call <sid>hi("DiffText"    , s:black , s:pink1 , "NONE")
+call <sid>hi("DiffChange"  , ""      , s:diffc , "NONE")
+call <sid>hi("DiffText"    , s:black , s:difft , "NONE")
+call <sid>hi("DiffAdd"     , ""      , s:diffa , "NONE")
+call <sid>hi("DiffDelete"  , s:diffd , s:diffd , "NONE")
 
 " Git highlighting
-call <sid>hi("gitCommitOverflow" , s:fluor , "" , "NONE")
+call <sid>hi("gitCommitOverflow" , s:coral , "" , "NONE")
 call <sid>hi("gitCommitSummary"  , s:dark3 , "" , "NONE")
 
 " GitGutter highlighting
 call <sid>hi("GitGutterAdd"          , s:indig , s:lite2 , "NONE")
 call <sid>hi("GitGutterChange"       , s:turqo , s:lite2 , "NONE")
-call <sid>hi("GitGutterDelete"       , s:fluor , s:lite2 , "NONE")
+call <sid>hi("GitGutterDelete"       , s:coral , s:lite2 , "NONE")
 call <sid>hi("GitGutterChangeDelete" , s:dark2 , s:lite2 , "NONE")
 
 " Markdown highlighting
 call <sid>hi("markdownCode"             , s:indig , ""      , "NONE")
-call <sid>hi("markdownError"            , s:fluor , s:lite1 , "NONE")
+call <sid>hi("markdownError"            , s:coral , s:lite1 , "NONE")
 call <sid>hi("markdownCodeBlock"        , s:indig , ""      , "NONE")
 call <sid>hi("markdownHeadingDelimiter" , s:dark2 , ""      , "NONE")
 
 " SASS highlighting
-call <sid>hi("sassidChar"                 , s:fluor , "" , "NONE")
-call <sid>hi("sassClassChar"              , s:fluor , "" , "NONE")
+call <sid>hi("sassidChar"                 , s:coral , "" , "NONE")
+call <sid>hi("sassClassChar"              , s:coral , "" , "NONE")
 call <sid>hi("sassInclude"                , s:dark2 , "" , "NONE")
 call <sid>hi("sassMixing"                 , s:dark2 , "" , "NONE")
 call <sid>hi("sassMixinName"              , s:dark3 , "" , "NONE")
-call <sid>hi("sassVariable"               , s:fluor , "" , "NONE")
-call <sid>hi("sassClass"                  , s:fluor , "" , "NONE")
+call <sid>hi("sassVariable"               , s:coral , "" , "NONE")
+call <sid>hi("sassClass"                  , s:coral , "" , "NONE")
 call <sid>hi("sassProperty"               , s:dark3 , "" , "NONE")
 call <sid>hi("sassDefinition"             , s:dark3 , "" , "NONE")
 call <sid>hi("sassCssAttribute"           , s:dark2 , "" , "NONE")
@@ -356,4 +359,4 @@ delf <sid>hi
 delf <sid>gui
 
 " Remove color variables
-unlet s:black s:dark1 s:dark2 s:dark3 s:neutr s:lite3 s:lite2 s:lite1 s:white s:mint0 s:turqo s:blue0 s:indig s:purpl s:magen s:coral s:fluor s:pink1 s:pink2
+unlet s:black s:dark1 s:dark2 s:dark3 s:neutr s:lite3 s:lite2 s:lite1 s:white s:mint0 s:turqo s:blue0 s:indig s:purpl s:magen s:coral s:fluor s:diffa s:difft s:diffc s:diffd
