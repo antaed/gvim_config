@@ -15,12 +15,14 @@ let s:lime0 = "73D072" " #73D072
 let s:mint0 = "2EE1B2" " #2EE1B2
 let s:turqo = "00BAC7" " #00BAC7
 let s:blue0 = "1DA5FF" " #1DA5FF
-let s:blue1 = "0F3357" " #0F3357
-let s:blue2 = "112132" " #112132
 let s:indig = "6C76D5" " #6C76D5
 let s:purpl = "9E6CEA" " #9E6CEA
 let s:magen = "DC184D" " #DC184D
 let s:pink0 = "FF3369" " #FF3369
+let s:diffa = "112711" " #D1F0E7
+let s:difft = "0F3357" " #0F3357
+let s:diffc = "112132" " #112132
+let s:diffd = "291629" " #F0E4E7
 
 " Theme setup
 hi clear
@@ -194,6 +196,7 @@ call <sid>hi("phpIntVar"          , s:indig , "" , "NONE")
 call <sid>hi("phpMethods"         , s:indig , "" , "NONE")
 call <sid>hi("phpMethodsVar"      , s:indig , "" , "NONE")
 call <sid>hi("phpDef"             , s:indig , "" , "NONE")
+call <sid>hi("phpCap"             , s:purpl , "" , "NONE")
 call <sid>hi("phpMethod"          , s:purpl , "" , "NONE")
 call <sid>hi("phpFunc"            , s:purpl , "" , "NONE")
 call <sid>hi("phpClass"           , s:purpl , "" , "NONE")
@@ -302,10 +305,10 @@ call <sid>hi("vimNotation"  , s:lite2 , "" , "NONE")
 call <sid>hi("vimMapModKey" , s:lite2 , "" , "NONE")
 
 " Diff highlighting
-call <sid>hi("DiffAdd"     , s:white , s:blue1 , "NONE")
-call <sid>hi("DiffChange"  , ""      , s:blue2 , "NONE")
-call <sid>hi("DiffDelete"  , s:black , s:black , "NONE")
-call <sid>hi("DiffText"    , s:white , s:blue1 , "NONE")
+call <sid>hi("DiffChange"  , ""      , s:diffc , "NONE")
+call <sid>hi("DiffText"    , s:white , s:difft , "NONE")
+call <sid>hi("DiffAdd"     , ""      , s:diffa , "NONE")
+call <sid>hi("DiffDelete"  , s:diffd , s:diffd , "NONE")
 
 " Git highlighting
 call <sid>hi("gitCommitOverflow" , s:magen , "" , "NONE")
@@ -357,4 +360,4 @@ delf <sid>hi
 delf <sid>gui
 
 " Remove color variables
-unlet s:black s:dark1 s:dark2 s:dark3 s:neutr s:lite3 s:lite2 s:lite1 s:white s:fluor s:lime0 s:mint0 s:turqo s:blue0 s:blue1 s:blue2 s:indig s:purpl s:magen s:pink0
+unlet s:black s:dark1 s:dark2 s:dark3 s:neutr s:lite3 s:lite2 s:lite1 s:white s:fluor s:lime0 s:mint0 s:turqo s:blue0 s:indig s:purpl s:magen s:pink0 s:diffa s:difft s:diffc s:diffd
