@@ -59,7 +59,7 @@ if has("gui_running")
     set guifont=-*-consolas-medium-r-normal-*-*-180-*-*-m-*-*
   else
     " set guifont=Consolas:h11:cDEFAULT
-    set guifont=Input:h10:cDEFAULT
+    set guifont=InputHack:h10:cDEFAULT
   endif
 endif
 
@@ -340,8 +340,7 @@ vnoremap <leader>pv <esc>/\%V\$\w\+<CR>:CopyMatches<CR>:vnew<CR>:vertical resize
 nnoremap <silent> <expr> <F6> exists('#goyo') ? ":Goyo!\<cr>" : ":packadd goyo.vim \<bar> :Goyo\<cr>"
 
 " Toggle colorscheme
-nnoremap <silent> <expr> <F10> g:colors_name=='antaed' ? ":colorscheme antaed_light".( exists('#goyo') ? "\<bar> :silent! call lightline#disable()" : "" )."\<cr>" : ":colorscheme antaed".( exists('#goyo') ? "\<bar> :silent! call lightline#disable()" : "" )."\<cr>"
-
+nnoremap <silent> <expr> <F10> g:colors_name=='antaed' ? ":colorscheme antaed_light".( exists('#goyo') ? "\<bar> :silent! call lightline#disable()" : "" )." \<bar> :set guifont=InputHack:h10:cDEFAULT:b\<cr>" : ":colorscheme antaed".( exists('#goyo') ? "\<bar> :silent! call lightline#disable()" : "" )." \<bar> :set guifont=InputHack:h10:cDEFAULT\<cr>"
 
 
 
