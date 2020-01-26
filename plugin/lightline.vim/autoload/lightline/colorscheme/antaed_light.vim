@@ -9,10 +9,10 @@ let s:lite3 = [ '#B3BFCB', '244' ] " #B3BFCB
 let s:lite2 = [ '#DBE1E6', '248' ] " #DBE1E6
 let s:lite1 = [ '#EAEDF0', '252' ] " #EAEDF0
 let s:white = [ '#FFFFFF', '15'  ] " #FFFFFF
-let s:mint0 = [ '#00C46F', '148' ] " #00C46F
-let s:indig = [ '#7381FF', '44'  ] " #7381FF
-let s:coral = [ '#F288A4', '98'  ] " #F288A4
-let s:fluor = [ '#DAFF61', '197' ] " #DAFF61
+let s:mint0 = [ '#30BF8F', '148' ] " #30BF8F
+let s:indig = [ '#5471FF', '44'  ] " #5471FF
+let s:coral = [ '#FF528B', '98'  ] " #FF528B
+let s:fluor = [ '#DDFF33', '197' ] " #DDFF33
 
 let s:p.normal.left     = [ [ s:white , s:mint0 ] , [ s:mint0 , s:white ] , [ s:neutr , s:white ] , [ s:neutr , s:white ] ]
 let s:p.command.left    = [ [ s:white , s:indig ] , [ s:indig , s:white ] , [ s:neutr , s:white ] , [ s:neutr , s:white ] ]
