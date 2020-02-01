@@ -37,7 +37,9 @@ fun <sid>hi(group, guifg, guibg, attr)
   if a:guibg != ""
     exec "hi " . a:group . " guibg=#" . s:gui(a:guibg)
   endif
-  if a:attr != ""
+  if a:attr == "undercurl"
+    exec "hi " . a:group . " gui=undercurl guisp=#".s:dark3
+  elseif a:attr != ""
     exec "hi " . a:group . " gui="    . a:attr
   endif
 endfun
@@ -64,7 +66,7 @@ call <sid>hi("SpecialKey"   , s:lite3 , ""      , "NONE")
 call <sid>hi("Ignore"       , s:lite3 , s:dark1 , "NONE")
 call <sid>hi("FoldColumn"   , s:neutr , s:dark1 , "NONE")
 call <sid>hi("CursorLineNr" , s:lite1 , s:dark1 , "NONE")
-call <sid>hi("SignColumn"   , s:white , s:dark1 , "NONE")
+call <sid>hi("SignColumn"   , s:neutr , s:dark1 , "NONE")
 call <sid>hi("Search"       , s:pink0 , s:dark1 , "NONE")
 call <sid>hi("QuickFixLine" , s:white , s:dark2 , "NONE")
 call <sid>hi("TabLineFill"  , s:black , s:lite1 , "NONE")
@@ -354,6 +356,24 @@ call <sid>hi("CtrlPMatch"       , s:pink0 , ""      , "NONE")
 " Highlight groups:
 call <sid>hi("CtrlPMode2"   , s:neutr , s:black , "NONE") " 'prt' or 'win' , 'regex' , the working directory (|hl-LineNr|)
 call <sid>hi("CtrlPMode1"   , s:lite3 , s:black , "NONE") " 'file' or 'path' or 'line' , and the current mode (Character)
+
+" COC
+call <sid>hi("CocErrorSign"          , s:magen , "" , "NONE")
+call <sid>hi("CocWarningSign"        , s:fluor , "" , "NONE")
+call <sid>hi("CocInfoSign"           , s:turqo , "" , "NONE")
+call <sid>hi("CocHintSign"           , s:purpl , "" , "NONE")
+call <sid>hi("CocErrorVirtualText"   , s:dark3 , "" , "NONE")
+call <sid>hi("CocWarningVirtualText" , s:dark3 , "" , "NONE")
+call <sid>hi("CocInfoVirtualText"    , s:dark3 , "" , "NONE")
+call <sid>hi("CocHintVirtualText"    , s:dark3 , "" , "NONE")
+call <sid>hi("CocErrorFloat"         , s:lite2 , "" , "NONE")
+call <sid>hi("CocWarningFloat"       , s:lite2 , "" , "NONE")
+call <sid>hi("CocInfoFloat"          , s:lite2 , "" , "NONE")
+call <sid>hi("CocHintFloat"          , s:lite2 , "" , "NONE")
+call <sid>hi("CocErrorHighlight"     , ""      , "" , "undercurl")
+call <sid>hi("CocWarningHighlight"   , ""      , "" , "undercurl")
+call <sid>hi("CocInfoHighlight"      , ""      , "" , "undercurl")
+call <sid>hi("CocHintHighlight"      , ""      , "" , "undercurl")
 
 " Remove functions
 delf <sid>hi

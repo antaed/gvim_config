@@ -317,7 +317,7 @@ tnoremap <F3> <C-w><C-c>
 nnoremap <F3> i<C-w><C-c>
 
 " Jump to next error
-nmap <silent> <F4> <Plug>(coc-diagnostic-next-error)
+nmap <silent> <F4> <Plug>(coc-diagnostic-next)
 
 " Compare current buffer against the file
 nnoremap <silent> <expr> <F5> &diff ? ':windo diffoff:bd' : ":DiffSaved\<CR>"
