@@ -2,13 +2,13 @@
 
 " Color definitions
 let s:black = "000000" " #000000
-let s:dark1 = "27313F" " #27313F
-let s:dark2 = "43556B" " #43556B
-let s:dark3 = "5D7792" " #5D7792
-let s:neutr = "859AB0" " #859AB0
-let s:lite3 = "B3BFCB" " #B3BFCB
-let s:lite2 = "DBE0E6" " #DBE1E6
-let s:lite1 = "EAEDF0" " #EAEDF0
+let s:dark1 = "233146" " #233146
+let s:dark2 = "3A5272" " #3A5272
+let s:dark3 = "5177A1" " #5177A1
+let s:neutr = "799ABB" " #799ABB
+let s:lite3 = "ABC1D5" " #ABC1D5
+let s:lite2 = "D6E2EB" " #D6E2EB
+let s:lite1 = "E7EEF3" " #E7EEF3
 let s:white = "FFFFFF" " #FFFFFF
 let s:gold0 = "A8990F" " #A8990F
 let s:lime0 = "5C940D" " #5C940D

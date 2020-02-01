@@ -1,13 +1,13 @@
 let s:p = { 'normal': {}, 'command': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {} }
 
 let s:black = [ '#000000', '0'   ] " #000000
-let s:dark1 = [ '#27313F', '232' ] " #27313F
-let s:dark2 = [ '#43556B', '235' ] " #43556B
-let s:dark3 = [ '#5D7792', '237' ] " #5D7792
-let s:neutr = [ '#859AB0', '241' ] " #859AB0
-let s:lite3 = [ '#B3BFCB', '244' ] " #B3BFCB
-let s:lite2 = [ '#DBE1E6', '248' ] " #DBE1E6
-let s:lite1 = [ '#EAEDF0', '252' ] " #EAEDF0
+let s:dark1 = [ '#233146', '232' ] " #233146
+let s:dark2 = [ '#3A5272', '235' ] " #3A5272
+let s:dark3 = [ '#5177A1', '237' ] " #5177A1
+let s:neutr = [ '#799ABB', '241' ] " #799ABB
+let s:lite3 = [ '#ABC1D5', '244' ] " #ABC1D5
+let s:lite2 = [ '#D6E2EB', '248' ] " #D6E2EB
+let s:lite1 = [ '#E7EEF3', '252' ] " #E7EEF3
 let s:white = [ '#FFFFFF', '15'  ] " #FFFFFF
 let s:blue0 = [ '#1998FF', '44'  ] " #1998FF
 let s:turqo = [ '#1098AD', '98'  ] " #1098AD

@@ -1,13 +1,13 @@
 let s:p = { 'normal': {}, 'command': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {} }
 
 let s:black = [ '#000000', '0'   ] " #000000
-let s:dark1 = [ '#101317', '232' ] " #101317
-let s:dark2 = [ '#191E24', '235' ] " #191E24
-let s:dark3 = [ '#34404D', '237' ] " #34404D
-let s:neutr = [ '#51657B', '241' ] " #51657B
-let s:lite3 = [ '#6E88A2', '244' ] " #6E88A2
-let s:lite2 = [ '#98ACBF', '248' ] " #98ACBF
-let s:lite1 = [ '#C0CDD8', '252' ] " #C0CDD8
+let s:dark1 = [ '#0E101B', '232' ] " #0E101B
+let s:dark2 = [ '#161B2C', '235' ] " #161B2C
+let s:dark3 = [ '#2E3A5C', '237' ] " #2E3A5C
+let s:neutr = [ '#495F92', '241' ] " #495F92
+let s:lite3 = [ '#6982B4', '244' ] " #6982B4
+let s:lite2 = [ '#96A9CA', '248' ] " #96A9CA
+let s:lite1 = [ '#BFCBDF', '252' ] " #BFCBDF
 let s:white = [ '#FFFFFF', '15'  ] " #FFFFFF
 let s:fluor = [ '#A3C924', '148' ] " #A3C924
 let s:turqo = [ '#00BAC7', '44'  ] " #00BAC7
