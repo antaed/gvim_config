@@ -17,6 +17,7 @@ let s:turqo = "1098AD" " #1098AD
 let s:blue0 = "1998FF" " #1998FF
 let s:indig = "845EF7" " #845EF7
 let s:purpl = "CC5DE8" " #CC5DE8
+let s:magen = "FF3369" " #FF3369
 let s:fluor = "E3FF54" " #E3FF54
 let s:diffa = "D1F0E7" " #D1F0E7
 let s:difft = "CFD3FF" " #CFD3FF
@@ -357,10 +358,10 @@ call <sid>hi("CtrlPMode2"   , s:neutr , s:white , "NONE") " 'prt' or 'win' , 're
 call <sid>hi("CtrlPMode1"   , s:dark3 , s:white , "NONE") " 'file' or 'path' or 'line' , and the current mode (Character)
 
 " COC
-call <sid>hi("CocErrorSign"          , s:black , s:fluor , "NONE")
-call <sid>hi("CocWarningSign"        , s:mint0 , "" , "NONE")
+call <sid>hi("CocErrorSign"          , s:magen , "" , "NONE")
+call <sid>hi("CocWarningSign"        , s:gold0 , "" , "NONE")
 call <sid>hi("CocInfoSign"           , s:blue0 , "" , "NONE")
-call <sid>hi("CocHintSign"           , s:turqo , "" , "NONE")
+call <sid>hi("CocHintSign"           , s:mint0 , "" , "NONE")
 call <sid>hi("CocErrorVirtualText"   , s:lite3 , "" , "NONE")
 call <sid>hi("CocWarningVirtualText" , s:lite3 , "" , "NONE")
 call <sid>hi("CocInfoVirtualText"    , s:lite3 , "" , "NONE")

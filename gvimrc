@@ -125,10 +125,10 @@ endif
 nnoremap <silent> <leader><space> :call popup_clear() <bar> :let @/ = expand("<cword>") <bar> :set invhlsearch<cr>
 
 " Remap buffer motion
-nnoremap <C-Down> :bnext<CR>
-nnoremap <C-Up> :bprevious<CR>
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-Right> :tabnext<CR>
+nnoremap <silent> <C-Down> :bnext<CR>
+nnoremap <silent> <C-Up> :bprevious<CR>
+nnoremap <silent> <C-Left> :tabprevious<CR>
+nnoremap <silent> <C-Right> :tabnext<CR>
 
 " Remap Ctrl-a
 nnoremap <C-a> ggVG
@@ -318,6 +318,7 @@ nnoremap <F3> i<C-w><C-c>
 
 " Jump to next error
 nmap <silent> <F4> <Plug>(coc-diagnostic-next)
+nmap <silent> <S-F4> <Plug>(coc-diagnostic-prev)
 
 " Compare current buffer against the file
 nnoremap <silent> <expr> <F5> &diff ? ':windo diffoff:bd' : ":DiffSaved\<CR>"
