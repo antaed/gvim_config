@@ -360,8 +360,8 @@ call <sid>hi("CtrlPMode1"   , s:lite3 , s:black , "NONE") " 'file' or 'path' or 
 " COC
 call <sid>hi("CocErrorSign"          , s:magen , "" , "NONE")
 call <sid>hi("CocWarningSign"        , s:fluor , "" , "NONE")
-call <sid>hi("CocInfoSign"           , s:blue0 , "" , "NONE")
-call <sid>hi("CocHintSign"           , s:mint0 , "" , "NONE")
+call <sid>hi("CocInfoSign"           , s:indig , "" , "NONE")
+call <sid>hi("CocHintSign"           , s:turqo , "" , "NONE")
 call <sid>hi("CocErrorVirtualText"   , s:dark3 , "" , "NONE")
 call <sid>hi("CocWarningVirtualText" , s:dark3 , "" , "NONE")
 call <sid>hi("CocInfoVirtualText"    , s:dark3 , "" , "NONE")

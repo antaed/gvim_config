@@ -360,8 +360,8 @@ call <sid>hi("CtrlPMode1"   , s:dark3 , s:white , "NONE") " 'file' or 'path' or 
 " COC
 call <sid>hi("CocErrorSign"          , s:magen , "" , "NONE")
 call <sid>hi("CocWarningSign"        , s:gold0 , "" , "NONE")
-call <sid>hi("CocInfoSign"           , s:blue0 , "" , "NONE")
-call <sid>hi("CocHintSign"           , s:mint0 , "" , "NONE")
+call <sid>hi("CocInfoSign"           , s:indig , "" , "NONE")
+call <sid>hi("CocHintSign"           , s:turqo , "" , "NONE")
 call <sid>hi("CocErrorVirtualText"   , s:lite3 , "" , "NONE")
 call <sid>hi("CocWarningVirtualText" , s:lite3 , "" , "NONE")
 call <sid>hi("CocInfoVirtualText"    , s:lite3 , "" , "NONE")
@@ -380,4 +380,4 @@ delf <sid>hi
 delf <sid>gui
 
 " Remove color variables
-unlet s:black s:dark1 s:dark2 s:dark3 s:neutr s:lite3 s:lite2 s:lite1 s:white s:gold0 s:lime0 s:mint0 s:turqo s:blue0 s:indig s:purpl s:fluor s:diffa s:difft s:diffc s:diffd
+unlet s:black s:dark1 s:dark2 s:dark3 s:neutr s:lite3 s:lite2 s:lite1 s:white s:gold0 s:lime0 s:mint0 s:turqo s:blue0 s:indig s:purpl s:magen s:fluor s:diffa s:difft s:diffc s:diffd
