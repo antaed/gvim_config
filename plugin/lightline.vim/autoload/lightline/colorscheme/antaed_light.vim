@@ -13,6 +13,9 @@ let s:blue0 = [ '#1998FF', '44'  ] " #1998FF
 let s:turqo = [ '#1098AD', '98'  ] " #1098AD
 let s:mint0 = [ '#12B886', '148' ] " #12B886
 let s:fluor = [ '#E3FF54', '197' ] " #E3FF54
+let s:gold0 = [ '#A8990F', '197' ] " #A8990F
+let s:magen = [ '#FF3369', '197' ] " #FF3369
+let s:indig = [ '#845EF7', '197' ] " #845EF7
 
 let s:p.normal.left     = [ [ s:white , s:mint0 ] , [ s:mint0 , s:white ] , [ s:neutr , s:white ] , [ s:neutr , s:white ] ]
 let s:p.command.left    = [ [ s:white , s:blue0 ] , [ s:blue0 , s:white ] , [ s:neutr , s:white ] , [ s:neutr , s:white ] ]
@@ -33,9 +36,11 @@ let s:p.tabline.left    = [ [ s:neutr , s:white ] , [ s:neutr , s:white ] , [ s:
 let s:p.tabline.tabsel  = [ [ s:black , s:white ] ]
 let s:p.tabline.middle  = [ [ s:neutr , s:white ] ]
 let s:p.tabline.right   = [ [ s:white , s:white ] ]
-let s:p.normal.error    = [ [ s:black , s:fluor ] ]
-let s:p.normal.warning  = [ [ s:black , s:fluor ] ]
-let s:p.command.error   = [ [ s:black , s:fluor ] ]
-let s:p.command.warning = [ [ s:black , s:fluor ] ]
+let s:p.normal.error    = [ [ s:magen , s:white ] ]
+let s:p.normal.warning  = [ [ s:gold0 , s:white ] ]
+let s:p.normal.hints     = [ [ s:turqo , s:white ] ]
+let s:p.normal.information  = [ [ s:indig , s:white ] ]
+let s:p.command.error   = [ [ s:magen , s:white ] ]
+let s:p.command.warning = [ [ s:gold0 , s:white ] ]
 
 let g:lightline#colorscheme#antaed_light#palette = lightline#colorscheme#flatten(s:p)

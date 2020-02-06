@@ -1,9 +1,15 @@
 ﻿" GENERAL SETUP ------------------------------------------------
 
 let g:lightline = { 'colorscheme': 'antaed', 'mode_map': { 'n': '  N', 'c': '  C', 'i': '  I', 'v':'  V', 'V': ' VL', "\<C-v>": ' VB', 'R': '  R', '?': '   ' },
-            \ 'active':   { 'left': [ [ 'mode' ], [ 'modified', 'readonly' ], [ 'filename', 'cocstatus' ] ] }, 
+            \ 'active':   { 'left': [ [ 'mode' ], [ 'modified', 'readonly' ], [ 'filename' ], [ 'cocerror' ], [ 'cocwarn' ], [ 'cochint' ], [ 'cocinfo' ] ] }, 
             \ 'inactive': { 'left': [ [ 'mode' ], [ 'modified' ], [ 'filename' ] ] }, 'subseparator': { 'left': '', 'right':'' }, 
-            \ 'component_function': { 'cocstatus': 'coc#status', 'modified': 'CustomModified' } }
+            \ 'component_function': { 'modified': 'CustomModified' },
+            \ 'component_expand': {
+                    \ 'cocerror': 'LightLineCocError',
+                    \ 'cocwarn' : 'LightLineCocWarn',
+                    \ 'cochint' : 'LightLineCocHint',
+                    \ 'cocinfo' : 'LightLineCocInfo' },
+            \ }
 function! CustomModified()
     return &modified ? '+' : ''
 endfunction
@@ -12,8 +18,9 @@ endfunction
 augroup lightline-events
     autocmd!
     autocmd ColorScheme * call s:onColorSchemeChange(expand("<amatch>"))
+    autocmd User CocDiagnosticChange call lightline#update()
 augroup END
-let s:colour_scheme_map = {'antaed': 'antaed_light'}
+let s:colour_scheme_map = {'antaed_light': 'antaed'}
 function! s:onColorSchemeChange(scheme)
     " Try a scheme provided already
     execute 'runtime autoload/lightline/colorscheme/'.a:scheme.'.vim'
@@ -30,6 +37,39 @@ function! s:onColorSchemeChange(scheme)
     call lightline#init()
     call lightline#colorscheme()
     call lightline#update()
+endfunction
+
+" custom coc-diagnose highlights
+function! s:LightlineCodDiagnostics(sign, kind) abort
+    let g:lightline.component_type = {
+                \   'cocerror': 'error',
+                \   'cocwarn' : 'warning',
+                \   'cochint' : 'hints',
+                \   'cocinfo' : 'info',
+                \ }
+  let css = { 'E:': 'coc_status_error_sign', 'W:': 'coc_status_warning_sign', 'H:': 'coc_status_hint_sign', 'I:': 'coc_status_info_sign' }
+  let sign = get(g:, css[a:sign], a:sign)
+  let info = get(b:, 'coc_diagnostic_info', {})
+  if empty(info)
+    return ''
+  endif
+  let msgs = []
+  if get(info, a:kind, 0)
+    call add(msgs, sign . info[a:kind])
+  endif
+  return trim(join(msgs, ' ') . ' ' . get(g:, 'coc_status', ''))
+endfunction
+function! LightLineCocError() abort
+    return s:LightlineCodDiagnostics('E:','error')
+endfunction
+function! LightLineCocWarn() abort
+    return s:LightlineCodDiagnostics('W:','warning')
+endfunction
+function! LightLineCocHint() abort
+    return s:LightlineCodDiagnostics('H:','hint')
+endfunction
+function! LightLineCocInfo() abort
+    return s:LightlineCodDiagnostics('I:','info')
 endfunction
 
 " toggle colorscheme with goyo
