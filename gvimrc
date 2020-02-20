@@ -357,8 +357,8 @@ tnoremap <F3> <C-w><C-c>
 nnoremap <F3> i<C-w><C-c>
 
 " Jump to next error
-nmap <silent> <F4> <Plug>(coc-diagnostic-next)
-nmap <silent> <S-F4> <Plug>(coc-diagnostic-prev)
+nmap <silent> <F4> <Plug>(coc-diagnostic-next-error)
+nmap <silent> <S-F4> <Plug>(coc-diagnostic-prev-error)
 
 " Compare current buffer against the file
 nnoremap <silent> <expr> <F5> &diff ? ':windo diffoff:bd' : ":DiffSaved\<CR>"
@@ -382,6 +382,9 @@ nnoremap <silent> <expr> <F6> exists('#goyo') ? ":Goyo!\<cr>" : ":packadd goyo.v
 
 " Toggle colorscheme
 nnoremap <silent> <expr> <F10> g:colors_name=='antaed' ? ":colorscheme antaed_light".( exists('#goyo') ? "\<bar> :silent! call lightline#disable()" : "" )." \<bar> :set guifont=M+\\ 1mn:h12:cDEFAULT\<cr>" : ":colorscheme antaed".( exists('#goyo') ? "\<bar> :silent! call lightline#disable()" : "" )." \<bar> :set guifont=M+\\ 1mn\\ light:h12:cDEFAULT\<cr>"
+
+" Start CtrlP in MRU mode
+autocmd BufAdd,BufDelete * nnoremap <expr> <C-p> len(getbufinfo({'buflisted':1}))>1 ? ":CtrlPBuffer\<cr>" : ":CtrlP\<cr>"
 
 
 
@@ -442,7 +445,7 @@ let g:ctrlp_working_path_mode = 'w'
 let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=40
 " :help ctrlp-commands-extensions
-let g:ctrlp_extensions = ['dir', 'bookmarkdir']
+" let g:ctrlp_extensions = ['dir', 'bookmarkdir']
 
 " Use ctrlp with ripgrep
 if executable('rg')
@@ -458,7 +461,32 @@ endif
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 
 " Open multiple files
-  let g:ctrlp_open_multiple_files = 'i'
+let g:ctrlp_open_multiple_files = 'i'
+
+" custom prompt mappings
+let g:ctrlp_prompt_mappings = {
+    \ 'ToggleType(1)': ['<c-b>', '<c-down>', '<c-h>'],
+    \ 'ToggleType(-1)': ['<c-f>', '<c-up>', '<c-l>'],
+    \ 'PrtCurLeft()': ['<left>', '<c-^>'],
+    \ 'PrtCurRight()':['<right>'],
+\}
+" custom status line
+let g:ctrlp_status_func = {
+    \ 'main': 'CtrlP_Statusline_1',
+    \ 'prog': 'CtrlP_Statusline_2',
+    \ }
+function! CtrlP_Statusline_1(...)
+    let prev = '  %#StatusLine#<%*'
+    let item = '%#Search# '.toupper(a:5).' %*'
+    let next = '%#StatusLine#>%* '
+    let dir  = ' %=%<%#StatusLineNC#'.getcwd().'%* '
+    return prev.item.next.dir
+endfunction
+function! CtrlP_Statusline_2(...)
+    let len = '%#StatusLine# '.a:1.' %*'
+    let dir = ' %=%<%#StatusLineNC# '.getcwd().' %*'
+    return len.dir
+endfunction
 
 " Session management
 let g:session_autoload = "no"
