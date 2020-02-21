@@ -122,7 +122,6 @@ set encoding=utf-8
 scriptencoding utf-8
 filetype plugin indent on
 
-
 " Netrw configuration
 let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
@@ -138,6 +137,9 @@ autocmd TerminalOpen * if &buftype == 'terminal' | setlocal bufhidden=hide | end
 autocmd GUIEnter * silent! WToggleClean
 autocmd GUIEnter * simalt ~x " Start fullscreend
 autocmd GUIEnter * set vb t_vb= " Disable bell
+
+" Set default working directory
+cd $HOME/vimfiles/
 
 
 
@@ -383,9 +385,6 @@ nnoremap <silent> <expr> <F6> exists('#goyo') ? ":Goyo!\<cr>" : ":packadd goyo.v
 " Toggle colorscheme
 nnoremap <silent> <expr> <F10> g:colors_name=='antaed' ? ":colorscheme antaed_light".( exists('#goyo') ? "\<bar> :silent! call lightline#disable()" : "" )." \<bar> :set guifont=M+\\ 1mn:h12:cDEFAULT\<cr>" : ":colorscheme antaed".( exists('#goyo') ? "\<bar> :silent! call lightline#disable()" : "" )." \<bar> :set guifont=M+\\ 1mn\\ light:h12:cDEFAULT\<cr>"
 
-" Start CtrlP in MRU mode
-autocmd BufAdd,BufDelete * nnoremap <expr> <C-p> len(getbufinfo({'buflisted':1}))>1 ? ":CtrlPBuffer\<cr>" : ":CtrlP\<cr>"
-
 
 
 " PLUGINS --------------------------------------------------------------------
@@ -441,7 +440,7 @@ call minpac#add('kkoenig/wimproved.vim')
 "packloadall"
 
 " Set ctrlp working directory to cwd
-let g:ctrlp_working_path_mode = 'w'
+let g:ctrlp_working_path_mode = 'wa'
 let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=40
 " :help ctrlp-commands-extensions
@@ -453,7 +452,7 @@ if executable('rg')
     \ 'types': { 1: ['.git', 'cd %s && git ls-files --exclude-from=ctrlpignore -i'] },
     \ 'fallback': 'rg --files %s --color=never -g "!*.min.*" -g "!*.{map,jpeg,jpg,png,gif,ico,svg,eot,ttf,woff,woff2,otf,pdf,sql,gz,zip,mp4,ogg}" -g "!**/{db,docs,fonts,images,attachments,cache,ean13,plugins,vendor,xlsx_examples,video}/*"' }
     let g:ctrlp_use_caching = 0
-    let g:ctrlp_working_path_mode = 'ra'
+    " let g:ctrlp_working_path_mode = 'ra'
     let g:ctrlp_switch_buffer = 'et'
     set grepprg=rg\ --color=never
 endif
@@ -487,6 +486,8 @@ function! CtrlP_Statusline_2(...)
     let dir = ' %=%<%#StatusLineNC# '.getcwd().' %*'
     return len.dir
 endfunction
+" Start CtrlP in MRU mode
+autocmd BufAdd,BufDelete * nnoremap <expr> <C-p> len(getbufinfo({'buflisted':1}))>1 ? ":CtrlPBuffer\<cr>" : ":CtrlP\<cr>"
 
 " Session management
 let g:session_autoload = "no"
@@ -597,7 +598,6 @@ let g:sandwich#recipes += [
 
 
 " USEFUL SCRIPTS --------------------------------------------------------------------
-
 
 " Execute macro over visual range
 xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
