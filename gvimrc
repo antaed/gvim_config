@@ -139,7 +139,7 @@ autocmd GUIEnter * simalt ~x " Start fullscreend
 autocmd GUIEnter * set vb t_vb= " Disable bell
 
 " Set default working directory
-cd $HOME/vimfiles/
+tcd $HOME/Downloads/
 
 
 
@@ -440,7 +440,7 @@ call minpac#add('kkoenig/wimproved.vim')
 "packloadall"
 
 " Set ctrlp working directory to cwd
-let g:ctrlp_working_path_mode = 'wa'
+let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=40
 " :help ctrlp-commands-extensions
@@ -452,7 +452,6 @@ if executable('rg')
     \ 'types': { 1: ['.git', 'cd %s && git ls-files --exclude-from=ctrlpignore -i'] },
     \ 'fallback': 'rg --files %s --color=never -g "!*.min.*" -g "!*.{map,jpeg,jpg,png,gif,ico,svg,eot,ttf,woff,woff2,otf,pdf,sql,gz,zip,mp4,ogg}" -g "!**/{db,docs,fonts,images,attachments,cache,ean13,plugins,vendor,xlsx_examples,video}/*"' }
     let g:ctrlp_use_caching = 0
-    " let g:ctrlp_working_path_mode = 'ra'
     let g:ctrlp_switch_buffer = 'et'
     set grepprg=rg\ --color=never
 endif
@@ -756,7 +755,7 @@ function! SetProject() abort
     let opt = inputlist(options)
     call inputrestore()
     if opt>0 && opt<=len(projects)
-        exe ":cd ".path.projects[opt-1]
+        exe ":tcd ".path.projects[opt-1]
         normal 
         echon "Working directory set to: "
         echohl MoreMsg | echon projects[opt-1] | echohl None
