@@ -349,13 +349,22 @@ call <sid>hi("SpellCap"   , "" , s:lite1 , "undercurl")
 call <sid>hi("SpellRare"  , "" , s:lite1 , "undercurl")
 
 " CtrlP
+" Buffer explorer mode
+call <sid>hi("CtrlPBufferNr"     , s:dark1 , ""      , "NONE")
+call <sid>hi("CtrlPBufferInd"    , s:dark1 , ""      , "NONE")
+call <sid>hi("CtrlPBufferHid"    , s:dark1 , ""      , "NONE")
+call <sid>hi("CtrlPBufferHidMod" , s:dark1 , ""      , "NONE")
+call <sid>hi("CtrlPBufferVis"    , s:dark1 , ""      , "NONE")
+call <sid>hi("CtrlPBufferVisMod" , s:dark1 , ""      , "NONE")
+call <sid>hi("CtrlPBufferCur"    , s:dark1 , ""      , "NONE")
+call <sid>hi("CtrlPBufferCurMod" , s:dark1 , ""      , "NONE")
+call <sid>hi("CtrlPBufferPath"   , s:dark1 , ""      , "NONE")
 " For the CtrlP buffer:
-call <sid>hi("CtrlPBufferNr"    , s:dark1 , ""      , "NONE")
-call <sid>hi("CtrlPLinePre"     , s:lite1 , s:lite1 , "NONE") " the line prefix '>' in the match window
-call <sid>hi("CtrlPMatch"       , s:black , s:fluor      , "NONE")
+call <sid>hi("CtrlPLinePre"      , s:lite1 , s:lite1 , "NONE") " the line prefix '>' in the match window
+call <sid>hi("CtrlPMatch"        , s:black , s:fluor , "NONE")
 " Highlight groups:
-call <sid>hi("CtrlPMode2"   , s:neutr , s:white , "NONE") " 'prt' or 'win' , 'regex' , the working directory (|hl-LineNr|)
-call <sid>hi("CtrlPMode1"   , s:dark3 , s:white , "NONE") " 'file' or 'path' or 'line' , and the current mode (Character)
+call <sid>hi("CtrlPMode2"        , s:neutr , s:white , "NONE") " 'prt' or 'win' , 'regex' , the working directory (|hl-LineNr|)
+call <sid>hi("CtrlPMode1"        , s:dark3 , s:white , "NONE") " 'file' or 'path' or 'line' , and the current mode (Character)
 
 " COC
 call <sid>hi("CocErrorSign"          , s:magen , "" , "NONE")
